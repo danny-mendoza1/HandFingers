@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://gaej7ghx2agn"]
+
+[ext_resource type="Script" path="res://addons/gdscript_formatter/scripts/preference.gd" id="1_mynvu"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_bg6js"]
+alt_pressed = true
+shift_pressed = true
+pressed = true
+keycode = 70
+
+[sub_resource type="Shortcut" id="Shortcut_k25bw"]
+events = [SubResource("InputEventKey_bg6js")]
+
+[resource]
+script = ExtResource("1_mynvu")
+line_length = 175
+format_on_save = true
+shortcut = SubResource("Shortcut_k25bw")
+fast_but_unsafe = false
+gdformat_command = "/home/danny/Code/HandFingers/.venv/bin/gdformat"
+pip_command = "pip"
