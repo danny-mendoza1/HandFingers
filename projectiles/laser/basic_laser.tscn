@@ -4,14 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://dmrxb4a1046qu" path="res://assets/PNG/Lasers/laserBlue01.png" id="1_r1r1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxxxi"]
-size = Vector2(54, 10)
+size = Vector2(8, 54)
 
 [node name="Laser" type="Area2D"]
 script = ExtResource("1_atwuw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
 texture = ExtResource("1_r1r1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mxxxi")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.5, 2.7)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
