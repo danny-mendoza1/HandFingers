@@ -4,5 +4,4 @@ class_name BasicLaser extends Projectile
 
 
 func _ready() -> void:
-	# Override the default type if needed
-	type = "laser"
+	pass

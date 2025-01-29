@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://sivcpi7li8lp"]
+[gd_scene load_steps=4 format=3 uid="uid://y7bfmno1wge7"]
 
-[ext_resource type="Script" path="res://projectiles/laser/basic_laser.gd" id="1_atwuw"]
-[ext_resource type="Texture2D" uid="uid://dmrxb4a1046qu" path="res://assets/PNG/Lasers/laserBlue01.png" id="1_r1r1s"]
+[ext_resource type="Script" path="res://projectiles/projectile.gd" id="1_25epw"]
+[ext_resource type="Texture2D" uid="uid://dmrxb4a1046qu" path="res://assets/PNG/Lasers/laserBlue01.png" id="2_t1hwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxxxi"]
 size = Vector2(8, 54)
 
-[node name="Laser" type="Area2D"]
-script = ExtResource("1_atwuw")
+[node name="Projectile" type="Area2D" groups=["damageable"]]
+script = ExtResource("1_25epw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_r1r1s")
+texture = ExtResource("2_t1hwa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mxxxi")
@@ -19,4 +19,5 @@ shape = SubResource("RectangleShape2D_mxxxi")
 position = Vector2(0, -4.76837e-07)
 scale = Vector2(0.5, 2.7)
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

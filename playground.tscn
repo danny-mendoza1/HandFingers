@@ -1,8 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://fgv46arhoym4"]
+[gd_scene load_steps=5 format=3 uid="uid://fgv46arhoym4"]
 
-[ext_resource type="PackedScene" uid="uid://uurnig40pol2" path="res://player/player.tscn" id="1_fj1hy"]
+[ext_resource type="PackedScene" uid="uid://ds738klljki7n" path="res://player/player2.tscn" id="1_1aqtm"]
+[ext_resource type="Texture2D" uid="uid://cgnk4n7i6g8bp" path="res://assets/tutorial_assets/backgroundColor.png" id="2_j77nh"]
+[ext_resource type="Texture2D" uid="uid://vks5abglnwjj" path="res://assets/tutorial_assets/starBig.png" id="2_mem2p"]
+[ext_resource type="PackedScene" uid="uid://d05t1xw6e8sgg" path="res://meteor/meteor.tscn" id="4_f57h1"]
 
 [node name="Playground" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_fj1hy")]
-position = Vector2(88, 333)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(3.00667, 4)
+texture = ExtResource("2_j77nh")
+centered = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Background"]
+position = Vector2(73.5033, 4.5)
+amount = 40
+lifetime = 4.0
+texture = ExtResource("2_mem2p")
+emission_shape = 3
+emission_rect_extents = Vector2(70, 1)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+angle_min = -52.8
+angle_max = 52.8
+scale_amount_min = 0.2
+
+[node name="Player2" parent="." instance=ExtResource("1_1aqtm")]
+position = Vector2(208, 440)
+
+[node name="Meteor" parent="." instance=ExtResource("4_f57h1")]
+position = Vector2(341, 68)
