@@ -25,6 +25,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg")
 
+[global_group]
+
+damageable=""
+
 [input]
 
 player_up={

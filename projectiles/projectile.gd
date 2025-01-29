@@ -6,8 +6,7 @@ class_name Projectile extends Area2D
 
 
 func _ready() -> void:
-	# Connect the body entered signal for collision handling
-	self.connect("body_entered", Callable(self, "_on_body_entered"))
+	pass
 
 
 func _physics_process(delta: float) -> void:
@@ -15,8 +14,11 @@ func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
 
 
-func _on_body_entered(body: Node) -> void:
-	# Check if the body has a take_damage method
-	if "take_damage" in body:
-		body.take_damage(self)
-	queue_free()  # Destroy the projectile upon impact
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("damageable"):
+		area.damage(1)
+	pass

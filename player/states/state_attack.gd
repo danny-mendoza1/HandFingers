@@ -1,6 +1,6 @@
 class_name StateAttack extends State
 
-@export var projectile_scene: PackedScene = preload("res://projectiles/laser/basic_laser.tscn")
+@export var projectile_scene: PackedScene = preload("res://projectiles/projectile.tscn")
 @export var fire_rate: float = 0.2  # Cooldown time between projectiles
 @export var fire_delay: float = 0.2
 @onready var fire_delay_timer: Timer = $"../../FireDelayTimer"
@@ -12,7 +12,7 @@ var projectile_position_offset = Vector2(0, -60)
 func _ready() -> void:
 	# Ensure the projectile scene is set, preload a default if not
 	if projectile_scene == null:
-		projectile_scene = preload("res://projectiles/laser/basic_laser.tscn")
+		projectile_scene = preload("res://projectiles/projectile.tscn")
 
 
 func enter() -> void:

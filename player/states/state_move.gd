@@ -2,6 +2,7 @@ class_name StateMove extends State
 
 @export var move_speed: float = 300.0
 @onready var attack: State = $"../Attack"
+@onready var animated_sprite: AnimatedSprite2D = $"../../AnimatedSprite2D"
 
 
 func enter() -> void:
@@ -15,16 +16,18 @@ func exit() -> void:
 
 ## What happens during the _process update in this State
 func process(_delta: float) -> State:
-	player.velocity = player.direction * move_speed
-
-	#if player.set_direction():
-	#player.update_animation("walk")
-
+	if player.direction.x < 0:
+		animated_sprite.play("Left")
+	elif player.direction.x > 0:
+		animated_sprite.play("Right")
+	else:
+		animated_sprite.play("Straight")
 	return null
 
 
 ## What happens during the _physics_process update in this State
 func physics(_delta: float) -> State:
+	player.velocity = player.direction * move_speed
 	return null
 
 

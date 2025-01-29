@@ -3,12 +3,18 @@
 [ext_resource type="Script" path="res://meteor/meteor.gd" id="1_5fwcl"]
 [ext_resource type="Texture2D" uid="uid://4d217uaqmtch" path="res://assets/tutorial_assets/meteorBig.png" id="1_ivayy"]
 
-[node name="Meteor" type="Area2D"]
+[node name="Meteor" type="Area2D" groups=["damageable"]]
 script = ExtResource("1_5fwcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ivayy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(-43, -40, 15, -54, 60, -16, 67, 33, 15, 55, -21, 27, -52, 28, -66, -6)
+polygon = PackedVector2Array(17, 55, -22, 27, -53, 27, -68, -6, -45, -40, 15, -55, 60, -15, 67, 30)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.499999, 0.500002)
+scale = Vector2(7.05, 5.85)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
