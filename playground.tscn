@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://fgv46arhoym4"]
 
-[ext_resource type="PackedScene" uid="uid://ds738klljki7n" path="res://player/player2.tscn" id="1_1aqtm"]
+[ext_resource type="PackedScene" uid="uid://ds738klljki7n" path="res://player/player.tscn" id="1_1aqtm"]
 [ext_resource type="Texture2D" uid="uid://cgnk4n7i6g8bp" path="res://assets/tutorial_assets/backgroundColor.png" id="2_j77nh"]
 [ext_resource type="Texture2D" uid="uid://vks5abglnwjj" path="res://assets/tutorial_assets/starBig.png" id="2_mem2p"]
 [ext_resource type="PackedScene" uid="uid://d05t1xw6e8sgg" path="res://meteor/meteor.tscn" id="4_f57h1"]
